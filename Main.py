@@ -29,64 +29,64 @@ for marketsummary in MarketSummaries():
     print(marketsummary.toJSON())
 
 print('--------------------------Print Market Ticks Object-----------------------------')
-for marketTicks in GetMarketTicks(MarketTicks("USDT-BTC", 60)):
+for marketTicks in GetMarketTicks(MarketTicks("USDT-BTC", 60,"","")):
     print(marketTicks.toJSON())
 
 print('--------------------------Print Market Order Book Object-----------------------------')
-print(GetMarketOrderBook(MarketOrderBook("USDT-BTC", 50, False)).toJSON())
+print(GetMarketOrderBook(MarketOrderBook("USDT-BTC", 50, False,"","")).toJSON())
 
 print('--------------------------Print Market History Object-----------------------------')
-for markethis in GetMarketHistory(MarketHistory("USDT-BTC", 50, "string", "string")):
+for markethis in GetMarketHistory(MarketHistory("USDT-BTC", 50, "string", "string","","")):
     print(markethis.toJSON())
 
 
 print('--------------------------Print Wallet Balance Object-----------------------------')
-for walletbal in WalletBalance(Simulation(True)):
+for walletbal in WalletBalance(Simulation(True,"","")):
     print(walletbal.toJSON())
 
 print('--------------------------Print Wallet Transaction Book Object-----------------------------')
-print(GetWalletTransaction(WalletTransaction("BTC", True)).toJSON())
+print(GetWalletTransaction(WalletTransaction("BTC", True,"","")).toJSON())
 print('--------------------------Print Wallet Funds Object-----------------------------')
 try:
-    GetWalletFunds(WalletFunds("BTC", 1.05, "1CK6KHY6MHgYvmRQ4PAafKYDrg1eaaaaaa"))
+    GetWalletFunds(WalletFunds("BTC", 1.05, "1CK6KHY6MHgYvmRQ4PAafKYDrg1eaaaaaa","",""))
 except:
     print('401 unAuth')
 
 
 print('--------------------------Print Order List Object-----------------------------')
-for orderls in GetOrderList(OrderListRequest(0, 10, "USDT-BTC", True)):
+for orderls in GetOrderList(OrderListRequest(0, 10, "USDT-BTC", True,"","")):
     print(orderls.toJSON())
 
 print('--------------------------Print Order Info Object-----------------------------')
-print(GetOrderInfo(OrderInfo("db78faa89f08062bfebeacb51365fadb08b63da6", True)).toJSON())
+print(GetOrderInfo(OrderInfo("db78faa89f08062bfebeacb51365fadb08b63da6", True,"","")).toJSON())
 
 print('--------------------------Print Pending Object-----------------------------')
-for orderpen in GetOrderPending(Simulation(True)):
+for orderpen in GetOrderPending(Simulation(True,"","")):
     print(orderpen.toJSON())
 
 print('--------------------------Print Order Create Object-----------------------------')
-result=GetOrderCreate(CreateOrder("USDT-BTC", "buy", 10, "BTC", 1.5, True))
+result=GetOrderCreate(CreateOrder("USDT-BTC", "buy", 10, "BTC", 1.5, True,"",""))
 print(result.toJSON())
 
 print('--------------------------Print Order Cancel Object-----------------------------')
-print(GetOrderCancel(OrderCancel(result.txid, False)).toJSON())
+print(GetOrderCancel(OrderCancel(result.txid, False,"","")).toJSON())
 
 print('--------------------------Print Portfolio Summary Object-----------------------------')
-print(GetPortfolioSummary(Simulation(True)).toJSON())
+print(GetPortfolioSummary(Simulation(True,"","")).toJSON())
 
 print('--------------------------Print Portfolio open order Object-----------------------------')
-for POpenOrder in GetPortfolioOpenOrder(Simulation(True)):
+for POpenOrder in GetPortfolioOpenOrder(Simulation(True,"","")):
     print(POpenOrder.toJSON())
 
 print('--------------------------Print Portfolio History Object-----------------------------')
-for POpenOrder in GetPortfolioHistory(Simulation(True)):
+for POpenOrder in GetPortfolioHistory(Simulation(True,"","")):
     print(POpenOrder.toJSON())
 
 print('--------------------------Print Portfolio Create Order Object-----------------------------')
-print(GetPortfolioCreateOrder(PortfolioCreateOrder("USDT-BTC", 0.55, 3555.36, True)).toJSON())
+print(GetPortfolioCreateOrder(PortfolioCreateOrder("USDT-BTC", 0.55, 3555.36, True,"","")).toJSON())
 
 print('--------------------------Print Portfolio Cancel Order Object-----------------------------')
-print(GetPortfolioCancelOrder(CancelPorfolioOrder(1, False)).toJSON())
+print(GetPortfolioCancelOrder(CancelPorfolioOrder(1, False,"","")).toJSON())
 
 print('--------------------------Print Portfolio Close Order Object-----------------------------')
-print(GetPortfolioCloseOrder(ClosePortfolioPosition(1, True)).toJSON())
+print(GetPortfolioCloseOrder(ClosePortfolioPosition(1, True,"","")).toJSON())
