@@ -26,6 +26,10 @@ class PortfolioListResponse:
     def __init__(self, items: List[Item], wallet: str) -> None:
         self.items = items
         self.wallet = wallet
+
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__,
+                          sort_keys=True, indent=4)
     
     @staticmethod
     def create_from_json(data):
